@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+    color:#005ce6;
+    font-size: 30px;
+}
+input[type="text"],input[type="email"]
+{
+    border-width: 0ch;
+}
+*{
+    font-size:20px;
+}

@@ -1,0 +1,25 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+form{
+    font-size:20px;
+}
+.form-group{
+    border:2px solid;
+    width:800px;
+}
+.form-control{
+    text-align: left;
+    width:300px;
+}
+label { 
+    float:left; 
+    width: 10em; 
+    margin-right: 1em;
+    left:20%;
+}
+.radio-inline{
+    text-align:left;
+}
+.alert{
+   color:red;
+   text-align: right;
+}

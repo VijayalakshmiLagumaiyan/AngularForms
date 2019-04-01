@@ -1,0 +1,64 @@
+
+  <div class="table-responsive" *ngIf="entry">
+    <table class="table table-hover">
+    <thead class="thead-light">
+            <tr>
+              <th>
+               S.No
+              </th>
+              <th>
+                FirstName
+              </th>
+              <th>
+                LastName
+              </th>
+              <th>
+                Gender
+              </th>
+              <th>
+                Email
+              </th>
+              <th>
+                Date Of Birth
+              </th>
+              <th>
+                State
+              </th>
+              <th>
+                city
+              </th>
+              <th>
+                Country
+              </th>
+              <th>
+                PhoneNumber
+              </th>
+          </thead>
+          
+          <tr *ngFor ="let element of entry;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{element.FirstName | uppercase}}</td>
+            <td>{{element.LastName | uppercase}}</td>
+            <td>{{element.Gender}}</td>
+            <td>{{element.email}}</td>
+            <td>{{element.dob}}</td>
+            <td>{{element.state}}</td>
+            <td>{{element.city}}</td>
+            <td>{{element.country}}</td>
+            <td>{{element.phonenumber}}</td>
+            <a routerLink ="/entries"></a>
+            <td><button class="btn btn-outline-warning" (click)=editValue(i)>Edit</button>
+            <button type="reset" class="btn btn-outline-danger"(click)=confirmation() (click)=deleteValue(element)>Delete</button></td>
+            </tr>
+          </table>
+          <div class="text-center" *ngIf="spin">
+          <div class="spinner-border text-primary" role="status">
+              <span class="sr-only" >Loading...</span>
+          </div>
+          </div>
+          <button type="button" class="btn btn-outline-danger"(click)=  backPage()>Back</button>
+</div>
+
+
+
+

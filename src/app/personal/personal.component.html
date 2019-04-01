@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="form-group">
+    <form  (ngSubmit)= "send()" [formGroup]="form">
+      <fieldset>
+        <legend>Enrollment Form</legend>
+        <div [hidden]="clickEdit">
+          <label >Id:</label>
+          <span><input type="text" class="form-control" formControlName="id" placeholder="Id" readonly></span>
+        </div>
+        <div>
+          <label>FirstName:</label>
+          <span>
+            <input type="text" id="fname"class="form-control" formControlName="FirstName" placeholder="FirstName" required>
+            <div class = "alert" *ngIf="!form.controls['FirstName'].valid && form.controls['FirstName'].touched">
+              FirstName is required
+            </div>
+          </span>
+           </div>
+          <div>
+          <label>LastName:</label>
+          <span><input type="text" class="form-control" formControlName="LastName" placeholder="LastName"></span>
+        </div>
+        <div >
+          <label >Gender:</label>
+          <label class="radio-inline"><input type="radio" value="male"  formControlName="Gender" >Male
+          <input type="radio" value="female" formControlName="Gender">Female</label>
+        </div>
+        <div class="input-group mb-3">
+          <label>Email-id:</label>
+          <span><input type="email" class="form-control" formControlName="email" placeholder="Email-id" required></span>
+          <div class="input-group-append">
+            <span class="input-group-text">@example.com</span>
+          </div>
+          <div class = "alert" *ngIf="!form.controls['email'].valid && form.controls['email'].touched">
+              email is required
+            </div>
+        </div>
+        <div>
+          <label>Date Of Birth:</label>
+          <span><input type="Date" class="form-control" formControlName="dob"></span>
+        </div>
+        <div>
+          <label>State:</label>
+          <span><input type="text" class="form-control" formControlName="state" placeholder="State"></span>
+        </div>
+        <div>
+          <label>city:</label>
+          <span><input type="text" class="form-control" formControlName="city" placeholder="City"></span>
+        </div>
+        <div>
+          <label>country:</label>
+          <span><input type="text" class="form-control" formControlName="country" placeholder="Country"></span>
+        </div>
+        <div>
+          <label>phonenumber:</label>
+          <span><input type="text" class="form-control" formControlName="phonenumber" required></span>
+          <p class = "alert" *ngIf="form.controls['phonenumber'].touched">
+              phonenumber is required
+          </p>
+        <p class="alert" *ngIf="form.controls['phonenumber'].hasError('maxLength')">only 10  characters</p>
+        </div>
+        <div>
+          <button class="btn btn-outline-success" type="submit" value="submit" [disabled]="!form.valid">{{buttonname}}</button>
+          <button class="btn btn-outline-danger" type="reset">Clear All</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div>
+    <button class="btn btn-outline-primary" type="button" (click)="navigation()">view</button>
+  </div>
+
